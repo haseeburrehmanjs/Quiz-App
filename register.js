@@ -14,10 +14,6 @@ let email = document.querySelector('#email')
 let password = document.querySelector('#password')
 let form = document.querySelector('form')
 
-// GET REGISTER DATA FORM LOCAL STORAGE
-let getData = JSON.parse(localStorage.getItem('sendLocal'))
-console.log(getData)
-
 // EMAIL PASSWORD REGEX VALIDATION
 let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,15}$/;
@@ -43,8 +39,8 @@ form.addEventListener('submit', event => {
         console.log(userRegister);
         pushData()
         alert('Register succesfull')
-        // window.location = 'index.html'
-    }else {
+        window.location = 'index.html'
+    } else {
         alert('Password 8 and 15 characters, including at least one special character, one number, and one uppercase letter:')
     }
 })
