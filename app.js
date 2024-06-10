@@ -1,6 +1,3 @@
-// API LINK 
-"https://the-trivia-api.com/v2/questions"
-
 // PASSWORD VISIBILITY FUNCTION
 function myInput(){
     let x = document.querySelector('#password')

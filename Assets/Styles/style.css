@@ -49,3 +49,58 @@ form input {
     border: none;
     outline: none;
 }
+
+/* QUIZ CSS */
+
+#Question {
+    width: 400px;
+    height: 200px;
+    background-color: var(--secondary);
+}
+
+.main-image img {
+    width: 80%;
+}
+
+.header-image img {
+    width: 40%;
+}
+
+.question h3 {
+    width: 40%;
+    height: 200px;
+    padding: 10px;
+}
+
+.main-quiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.question-key p {
+    font-size: 18px;
+}
+
+.main-images img {
+    width: 50%;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px) {
+    #main-header div> h1 {
+        margin-top: 10px;
+    }
+    #main-header div> h6{
+        margin-top: 10px;
+    }
+    #main-header div> h3 {
+        margin-top: 10px;
+    }
+}
