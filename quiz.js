@@ -3,6 +3,8 @@ let div = document.querySelector('.question')
 let nextBtn = document.querySelector('#nextBtn')
 let ul = document.querySelector('.main-ul')
 let index = 0
+let result = 0
+let totalMarks = 100
 let questions = [] // Initialize an empty array to store the questions
 
 // SUFFLE ARRAY 
@@ -21,28 +23,45 @@ let renderQuestion = (arr) => {
     let answer = [
         ...arr[index].incorrectAnswers, arr[index].correctAnswer
     ]
-    console.log(answer);
+    // console.log(answer);
     div.innerHTML += `
       <h3>Q${index + 1}: ${arr[index].question.text}</h3>
       `;
-      ul.innerHTML = `
+    ul.innerHTML = `
       ${shuffleArray(answer).map(
         (items) => `
         <li>
-        <input type="radio" name="choice" class="choice" id=${items} value=${items}><label for=${items}> ${items}</label>
+        <input type="radio" name="choice" class="choice" id=${items} value=${items}><label for=${items}>${items}</label>
         </li>`
-      )}
+    )}
       `
 }
 
 // NEXT BUTTON
 nextBtn.addEventListener("click", () => {
+    const choice = document.querySelectorAll(".choice");
+    div.innerHTML = "";
+    choice.forEach((item) => {
+        if (item.checked) {
+            if (item.nextSibling.innerHTML === questions[index].correctAnswer) {
+                result += 10;
+            }
+        }
+    });
+
     if (index < questions.length - 1) {
         index += 1
         renderQuestion(questions)
     } else {
         alert('Go to Result')
-        window.location= 'result.html'
+        window.location = 'result.html'
+        localStorage.setItem(
+            "result",
+            JSON.stringify({
+                totalMarks,
+                result,
+            })
+        )
     }
 })
 

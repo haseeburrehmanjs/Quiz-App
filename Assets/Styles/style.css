@@ -84,19 +84,22 @@ form input {
     border-radius: 5px;
     list-style: none;
     padding: 10px;
+    padding-left: 20px;
 }
 
 #nextBtn {
     width: 120px;
     height: 48px;
     background-color: #00821f;
+    border: none;
+    outline: none;
 }
 
 .question {
-    width: 400px;
+    width: 550px;
     height: 100px;
+    margin-bottom: 20px;
 }
-
 
 
 
@@ -111,7 +114,12 @@ form input {
     #main-header div> h3 {
         margin-top: 10px;
     }
-    /* .main-images img {
+    .main-images img {
         width: 300px;
-    } */
+    }
+    .question {
+        width: 400px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
 }
