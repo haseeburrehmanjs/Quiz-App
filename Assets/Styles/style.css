@@ -115,11 +115,25 @@ form input {
         margin-top: 10px;
     }
     .main-images img {
-        width: 300px;
+        /* width: 300px; */
+        display: none;
     }
     .question {
-        width: 400px;
+        width: 300px;
         height: 100px;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
+    .main-ul li{
+        width: 340px;
+        height: 48px;
+        background-color: var(--secondary);
+        border-radius: 5px;
+        list-style: none;
+        padding: 10px;
+        padding-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
 }
