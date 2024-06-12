@@ -1,9 +1,9 @@
 // PASSWORD VISIBILITY FUNCTION
-function myInput(){
+function myInput() {
     let x = document.querySelector('#password')
-    if(x.type === 'password'){
+    if (x.type === 'password') {
         x.type = 'text'
-    }else {
+    } else {
         x.type = 'password'
     }
 }
@@ -24,12 +24,22 @@ let emailCheck = getLocal.map(item => {
 form.addEventListener('submit', event => {
     event.preventDefault()
     getLocal.filter(item => {
-        if(item.email === email.value && item.password === password.value){
-            alert('Login SuccesFull')
-            window.location = 'quiz.html'
-        }else if(item.email === email.value){
+        if (item.email === email.value && item.password === password.value) {
+            // alert('Login SuccesFull')
+            Swal.fire({
+                title: 'Success!',
+                text: 'You have successfully logged in!',
+                icon: 'success',
+                confirmButtonText: 'Start Quiz'
+            }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = "quiz.html";
+                    }
+                });
+            // window.location = 'quiz.html'
+        } else if (item.email === email.value) {
             alert('Password Incorrect!')
-        }else {
+        } else {
             alert('please Register First')
         }
     })

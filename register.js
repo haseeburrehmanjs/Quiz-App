@@ -38,8 +38,18 @@ form.addEventListener('submit', event => {
         })
         console.log(userRegister);
         pushData()
-        alert('Register succesfull')
-        window.location = 'index.html'
+        // alert('Register succesfull')
+        Swal.fire({
+            title: 'Success!',
+            text: 'Your account registered successfully!',
+            icon: 'success',
+            confirmButtonText: 'Login'
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    window.location = "index.html";
+                }
+            });
     } else {
         alert('Password 8 and 15 characters, including at least one special character, one number, and one uppercase letter:')
     }
